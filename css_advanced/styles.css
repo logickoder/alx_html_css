@@ -1,0 +1,61 @@
+body {
+    text-align: center;
+    margin: 0%;
+}
+
+header {
+    background-image: url(header.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #f2f2f2;
+
+}
+
+.Learn-from-pro {
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+#quote {
+    background-color: #c271fe;
+}
+
+#Membership {
+    background-color: #071629;
+}
+
+.Members {
+    display: inline-flex;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.FAQ {
+    display: inline-flex;
+    gap: 5%;
+}
+
+footer {
+    background-color: #071629;
+    justify-content: space-evenly;
+}
+
+button {
+    background-color: #c271fe;
+    border-radius: 50px;
+    color: #f2f2f2;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    box-shadow: 1px 2px 3px rgba(0, 2, 0, 0.5);
+    border: none;
+    font-weight: 600;
+    font-size: 0.5em;
+}
+
+button:hover {
+    opacity: 0.9;
+    color: rgb(63, 63, 63);
+    box-shadow: none;
+
+}
