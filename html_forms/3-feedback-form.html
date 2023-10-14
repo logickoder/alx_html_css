@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback Forms</title>
+</head>
+<body>
+<form>
+    <div>
+        <label for="name">Name:</label>
+        <input id="name" type="text" name="name" required>
+    </div>
+    <div>
+        <label for="email">Email address:</label>
+        <input id="email" type="email" name="email" required>
+    </div>
+    <div>
+        <span>Feedback Options:</span>
+        <input type="checkbox" name="feedback[]" id="excellent" value="excellent">
+        <label for="excellent">Excellent</label>
+        <input type="checkbox" name="feedback[]" id="good" value="good">
+        <label for="good">Good</label>
+        <input type="checkbox" name="feedback[]" id="average" value="average">
+        <label for="average">Average</label>
+        <input type="checkbox" name="feedback[]" id="poor" value="poor">
+        <label for="poor">Poor</label>
+    </div>
+    <div>
+        <label for="file">Upload a File:</label>
+        <input type="file" id="file" value="file" required>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+<script>
+    const form = document.querySelector('form');
+    const checkboxes = form.querySelectorAll('input[type=checkbox]');
+    const checkboxLength = checkboxes.length;
+    const firstCheckbox = checkboxLength > 0 ? checkboxes[0] : null;
+
+    function init() {
+        if (firstCheckbox) {
+            for (let i = 0; i < checkboxLength; i++) {
+                checkboxes[i].addEventListener('change', checkValidity);
+            }
+
+            checkValidity();
+        }
+    }
+
+    function isChecked() {
+        for (let i = 0; i < checkboxLength; i++) {
+            if (checkboxes[i].checked) return true;
+        }
+
+        return false;
+    }
+
+    function checkValidity() {
+        const errorMessage = !isChecked() ? 'At least one checkbox must be selected.' : '';
+        firstCheckbox.setCustomValidity(errorMessage);
+    }
+
+    init();
+</script>
+</body>
+</html>
